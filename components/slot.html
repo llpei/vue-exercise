@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SLOT Demo</title>
+  <link rel="stylesheet" href="./semantic/semantic.min.css">
+</head>
+<body>
+  <div id="app">
+    <div class="ui container">
+      <div class="ui hidden divider"></div>
+      <segment>
+        <h1>Hello</h1>
+        <p>融智教育</p>
+      </segment>
+      <div class="ui divider"></div>
+      <card>
+        <img slot="image" src="./images/hseven.jpg" alt="">
+        <h1 slot="header">大娃</h1>
+        <p slot="meta">生来我就是一个大力士</p>
+      </card>
+    </div>
+  </div>
+  <script src="./js/vue.js" charset="utf-8"></script>
+  <script src="./js/slot.js" charset="utf-8"></script>
+</body>
+</html>

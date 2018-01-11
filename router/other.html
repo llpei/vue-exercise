@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Other Router Demo</title>
+  <link rel="stylesheet" href="./semantic/semantic.min.css">
+</head>
+<body>
+  <div id="app">
+    <div class="ui container">
+      <div class="ui hidden divider"></div>
+      <div class="ui three item menu">
+        <!-- 默认router激活的class是router-link-active -->
+        <!-- exact 代表路径完全匹配的时候 -->
+        <router-link active-class="active" exact
+          class="item"
+          to="/home">首页</router-link>
+        <router-link active-class="active"
+          class="item"
+          :to="{name:'phone'}">手机</router-link>
+        <router-link active-class="active"
+          class="item"
+          to="computer">电脑</router-link>
+      </div>
+      <div class="ui piled segment" style="padding:40px">
+        <router-view></router-view>
+      </div>
+    </div>
+
+  </div>
+  <script src="./js/vue.js" charset="utf-8"></script>
+  <script src="./js/vue-router.js" charset="utf-8"></script>
+  <script src="./js/other.js" charset="utf-8"></script>
+</body>
+</html>

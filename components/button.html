@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Button Demo</title>
+  <link rel="stylesheet" href="./semantic/semantic.min.css">
+</head>
+<body>
+  <div id="app">
+    <div class="ui container">
+      <div class="ui hidden divider"></div>
+      <div class="ui divider"></div>
+      <button class="ui button">button</button>
+      <div class="ui divider"></div>
+      <ui-button></ui-button>
+      <ui-button></ui-button>
+      <ui-button></ui-button>
+      <div class="ui divider"></div>
+      <g-button></g-button>
+      <g-button></g-button>
+      <g-button></g-button>
+      <div class="ui divider"></div>
+      <props-button text="publish"></props-button>
+      <props-button text="edit"></props-button>
+      <props-button text="delete"></props-button>
+      <props-button v-bind:text="published?'publish':'unpublish'"></props-button>
+      <props-button></props-button>
+      <props-button text="hi"></props-button>
+    </div>
+
+  </div>
+  <script src="./js/vue.js" charset="utf-8"></script>
+  <script src="./js/button.js" charset="utf-8"></script>
+</body>
+</html>

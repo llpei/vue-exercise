@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Transition Router Demo</title>
+  <link rel="stylesheet" href="./semantic/semantic.min.css">
+</head>
+<body>
+  <div id="app">
+    <div class="ui container">
+      <div class="ui hidden divider"></div>
+      <div class="ui two item menu">
+        <!-- 默认router激活的class是router-link-active -->
+        <!-- exact 代表路径完全匹配的时候 -->
+        <router-link active-class="active" exact class="item" to="/">首页</router-link>
+        <router-link active-class="active" class="item" to="/events">活动</router-link>
+      </div>
+      <div class="ui piled segment" style="padding:40px">
+        <!-- fade slide bounce -->
+        <transition name="slide-right" :duration="{ enter: 1500, leave: 1800 }">
+          <router-view></router-view>
+        <transition>
+      </div>
+      <div class="ui piled segment" style="padding:40px">
+        <router-view name="a"></router-view>
+      </div>
+      <div class="ui piled segment" style="padding:40px">
+        <transition :name="transitionName" :duration="{ enter: 1500, leave: 1800 }">
+          <router-view name="b"></router-view>
+        <transition>
+      </div>
+    </div>
+
+  </div>
+  <script src="./js/vue.js" charset="utf-8"></script>
+  <script src="./js/vue-router.js" charset="utf-8"></script>
+  <script src="./js/transition.js" charset="utf-8"></script>
+</body>
+</html>
