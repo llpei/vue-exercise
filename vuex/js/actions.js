@@ -36,15 +36,22 @@ const store = new Vuex.Store({
           context.commit('setCount',response.data.count)
         })
     },
-    addCount({ commit },payload){
-      return axios.post('http://localhost:3000/api/count',{"number":payload})
+    add({ commit }){
+      return axios.post('http://localhost:8080/api/count',{number:1})
         .then(response => {
           console.log(response)
-          commit('setCount',payload);
+          commit('add');
         })
     },
-    deleteCount( { commit }){
-      return axios.delete('http://localhost:3000/api/count')
+    addPayload({ commit },payload){
+      return axios.post('http://localhost:8080/api/count',{number:payload})
+        .then(response => {
+          console.log(response)
+          commit('addPayload',payload);
+        })
+    },
+    remove( { commit }){
+      return axios.delete('http://localhost:8080/api/count')
         .then(response => {
           commit('remove')
         })
@@ -56,13 +63,13 @@ const Counter = {
   template:`
     <div>
       <div class="ui red circular label">
-        {{ count }}
+        总数：{{ count }}
       </div>
       <div class="ui blue circular label">
-        {{ total }}
+        数组长度：{{ total }}
       </div>
       <div class="ui gray circular label">
-        {{ avg }}
+        平均值：{{ avg }}
       </div>
     </div>
 
@@ -101,14 +108,14 @@ const vm = new Vue({
   },
   methods:{
     add(){
-      this.$store.dispatch('addCount',1);
+      this.$store.dispatch('add');
     },
     addPayload(){
       const payload = Math.floor( Math.random() * (10 -1) + 1)
-      this.$store.dispatch('addCount',payload);
+      this.$store.dispatch('addPayload',payload);
     },
     remove(){
-      this.$store.dispatch('deleteCount');
+      this.$store.dispatch('remove');
     }
   }
 })

@@ -10,7 +10,8 @@ app.use(bodyParser.json())
 app.use((request,response,next) => {
     //解决跨域访问的问题
     response.header("Access-Control-Allow-Origin","*")
-    response.header("Access-Control-Allow-Content","Content-Type")
+    response.header("Access-Control-Allow-Headers","Content-Type")
+    response.header("Access-Control-Allow-Methods","*")
     next()
   }
 )
