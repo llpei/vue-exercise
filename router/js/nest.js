@@ -38,7 +38,6 @@ const routes = [
   {
     path: '/events/:id',
     component: Event,
-    props:true,
     // 增加的嵌套路由
     children:[
       {
@@ -49,7 +48,9 @@ const routes = [
   }
 ]
 
-const router = new VueRouter({})
+const router = new VueRouter({
+  routes
+})
 
 const app = new Vue({
   el:'#app',
